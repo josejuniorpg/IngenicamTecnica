@@ -2,11 +2,11 @@ import '@mantine/core/styles.css';
 
 import React from 'react';
 import { ColorSchemeScript, mantineHtmlProps, MantineProvider } from '@mantine/core';
-import { theme } from '../theme';
+import { theme } from '../../theme';
 
 export const metadata = {
-  title: 'Mantine Next.js template',
-  description: 'I am using Mantine with Next.js!',
+  title: 'Ingenicam',
+  description: 'Hi and Welcome!',
 };
 
 export default function RootLayout({ children }: { children: any }) {
