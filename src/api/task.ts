@@ -1,10 +1,8 @@
-// services/taskService.ts
-
 import { CreateTaskDto, UpdateTaskStatusDto } from '@/dto/task';
 import { apiService } from '@/lib/api/service';
 import { Task } from '@/types/task.types';
 
-const TASKS_ENDPOINT = 'tasks'; // Ajusta esto según tu configuración real
+const TASKS_ENDPOINT = 'api/tasks';
 
 export const taskService = {
   getAllTasks: async () => {
@@ -18,7 +16,7 @@ export const taskService = {
   },
 
   updateTaskStatus: async (id: string, statusData: UpdateTaskStatusDto) => {
-    const response = await apiService.update<Task, UpdateTaskStatusDto>(
+    const response = await apiService.patch<Task, UpdateTaskStatusDto>(
       `${TASKS_ENDPOINT}/${id}/status`,
       id,
       statusData

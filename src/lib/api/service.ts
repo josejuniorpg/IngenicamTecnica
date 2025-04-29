@@ -9,28 +9,31 @@ export const apiService: AxiosApiService = {
 
   getById: async <T>(
     endpoint: string,
-    id: string | number
   ): Promise<AxiosResponse<ApiResponse<T>>> => {
-    return await apiClient.get<ApiResponse<T>>(`/${endpoint}/${id}`);
+    return await apiClient.get<ApiResponse<T>>(`/${endpoint}`);
   },
 
   create: async <T, D>(endpoint: string, data: D): Promise<AxiosResponse<ApiResponse<T>>> => {
     return await apiClient.post<ApiResponse<T>>(`/${endpoint}`, data);
   },
 
-  update: async <T, D>(
+  patch: async <T, D>(
     endpoint: string,
-    id: string | number,
     data: D
   ): Promise<AxiosResponse<ApiResponse<T>>> => {
-    return await apiClient.put<ApiResponse<T>>(`/${endpoint}/${id}`, data);
+    return await apiClient.patch<ApiResponse<T>>(`/${endpoint}`, data);
+  },
+  update: async <T, D>(
+    endpoint: string,
+    data: D
+  ): Promise<AxiosResponse<ApiResponse<T>>> => {
+    return await apiClient.put<ApiResponse<T>>(`/${endpoint}`, data);
   },
 
   remove: async <T>(
     endpoint: string,
-    id: string | number
   ): Promise<AxiosResponse<ApiResponse<T>>> => {
-    return await apiClient.delete<ApiResponse<T>>(`/${endpoint}/${id}`);
+    return await apiClient.delete<ApiResponse<T>>(`/${endpoint}`);
   },
 
   search: async <T>(
