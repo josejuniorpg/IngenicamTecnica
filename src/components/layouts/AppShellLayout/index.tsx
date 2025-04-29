@@ -20,7 +20,6 @@ export default function AppShellLayout({ children }: { children: any }) {
       }}
       withBorder={false}
     >
-      {/* Todo: NavBar Component  */}
       <AppShell.Header>
         <MyHeader
           desktopOpened={desktopOpened}

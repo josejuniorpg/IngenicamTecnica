@@ -1,4 +1,5 @@
 import { Box, Burger, Divider, Group, ScrollArea, Title } from '@mantine/core';
+import { NavbarTasks } from '@/components/layouts/AppShellLayout/MyNavBar/NavbarTasks';
 import classes from './MyNavBar.module.css';
 
 interface MyNavBarProps {
@@ -23,9 +24,7 @@ export default function MyNavBar({ mobileOpened, toggleMobile }: MyNavBarProps) 
         />
       </Group>
       <Divider size={1} />
-      <ScrollArea>
-        <></>
-      </ScrollArea>
+      <NavbarTasks />
     </Box>
   );
 }
