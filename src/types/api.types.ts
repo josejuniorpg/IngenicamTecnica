@@ -20,12 +20,12 @@ export interface ApiResponse<T> {
  */
 export interface AxiosApiService {
   getAll: <T>(endpoint: string) => Promise<AxiosResponse<ApiResponse<T>>>;
-  getById: <T>(endpoint: string, id: string | number) => Promise<AxiosResponse<ApiResponse<T>>>;
+  getById: <T>(endpoint: string) => Promise<AxiosResponse<ApiResponse<T>>>;
   create: <T, D>(endpoint: string, data: D) => Promise<AxiosResponse<ApiResponse<T>>>;
-  patch: <T, D>(
+  patch: <T>(
     endpoint: string,
     id: string | number,
-    data: D
+    data: { headers: { 'Content-Type': string } }
   ) => Promise<AxiosResponse<ApiResponse<T>>>;
   update: <T, D>(
     endpoint: string,

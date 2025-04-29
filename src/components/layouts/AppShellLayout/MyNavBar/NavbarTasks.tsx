@@ -28,6 +28,7 @@ export function NavbarTasks() {
 
   const handleStatusChange = async (taskId: string, newStatus: TaskStatus) => {
     try {
+      const response = await taskService.updateTaskStatus(taskId, { status: newStatus });
       setTasks(tasks.map((task) => (task.id === taskId ? { ...task, status: newStatus } : task)));
     } catch (err) {
       console.error('Error Updating Task:', err);

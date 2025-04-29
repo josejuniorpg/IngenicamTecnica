@@ -5,6 +5,11 @@ import { Task } from '@/types/task.types';
 const TASKS_ENDPOINT = 'api/tasks';
 
 export const taskService = {
+  getStackByID: async (id: string) => {
+    const response = await apiService.getById<Task>(`${TASKS_ENDPOINT}/${id}`);
+    return response.data;
+  },
+
   getAllTasks: async () => {
     const response = await apiService.getAll<Task[]>(TASKS_ENDPOINT);
     return response.data;
@@ -16,11 +21,11 @@ export const taskService = {
   },
 
   updateTaskStatus: async (id: string, statusData: UpdateTaskStatusDto) => {
-    const response = await apiService.patch<Task, UpdateTaskStatusDto>(
-      `${TASKS_ENDPOINT}/${id}/status`,
-      id,
-      statusData
-    );
+    const response = await apiService.patch(`${TASKS_ENDPOINT}/${id}/status`, statusData, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
     return response.data;
   },
 
