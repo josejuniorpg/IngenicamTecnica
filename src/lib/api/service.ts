@@ -2,7 +2,7 @@ import { AxiosResponse } from 'axios';
 import { ApiResponse, AxiosApiService } from '@/types/api.types';
 import apiClient from './client';
 
-export const myApiAuthService: AxiosApiService = {
+export const apiService: AxiosApiService = {
   getAll: async <T>(endpoint: string): Promise<AxiosResponse<ApiResponse<T>>> => {
     return await apiClient.get<ApiResponse<T>>(`/${endpoint}`);
   },
