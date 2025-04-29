@@ -1,4 +1,5 @@
-import { Box, Burger, Divider, Group, ScrollArea, Title } from '@mantine/core';
+import { Box, Burger, Divider, Group, Stack, Title } from '@mantine/core';
+import { CreateTaskButton } from '@/components/buttons/CreateTaskButton';
 import { NavbarTasks } from '@/components/layouts/AppShellLayout/MyNavBar/NavbarTasks';
 import classes from './MyNavBar.module.css';
 
@@ -24,7 +25,10 @@ export default function MyNavBar({ mobileOpened, toggleMobile }: MyNavBarProps) 
         />
       </Group>
       <Divider size={1} />
-      <NavbarTasks />
+      <Stack justify="space-between" h="100%" pb={50}>
+        <NavbarTasks />
+        <CreateTaskButton />
+      </Stack>
     </Box>
   );
 }
