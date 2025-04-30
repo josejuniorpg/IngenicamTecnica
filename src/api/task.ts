@@ -21,25 +21,7 @@ export const taskService = {
   },
 
   updateTaskStatus: async (id: string, statusData: UpdateTaskStatusDto) => {
-    const response = await apiService.patch(`${TASKS_ENDPOINT}/${id}/status`, statusData, {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-    return response.data;
-  },
-
-  updateTask: async (id: string, taskData: Partial<CreateTaskDto>) => {
-    const response = await apiService.update<Task, Partial<CreateTaskDto>>(
-      TASKS_ENDPOINT,
-      id,
-      taskData
-    );
-    return response.data;
-  },
-
-  deleteTask: async (id: string) => {
-    const response = await apiService.remove<Task>(TASKS_ENDPOINT, id);
+    const response = await apiService.patch(`${TASKS_ENDPOINT}/${id}/status`, statusData);
     return response.data;
   },
 };
