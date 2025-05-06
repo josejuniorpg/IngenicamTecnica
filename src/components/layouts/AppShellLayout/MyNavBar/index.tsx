@@ -1,5 +1,5 @@
 import { Box, Burger, Divider, Group, Stack, Title } from '@mantine/core';
-import { CreateTaskButton } from '@/components/buttons/CreateTaskButton';
+import { CreateTaskButton } from '@/components/common/buttons/CreateTaskButton';
 import { NavbarTasks } from '@/components/layouts/AppShellLayout/MyNavBar/NavbarTasks';
 import classes from './MyNavBar.module.css';
 

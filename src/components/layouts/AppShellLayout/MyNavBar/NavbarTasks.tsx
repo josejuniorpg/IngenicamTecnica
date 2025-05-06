@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Stack, Text } from '@mantine/core';
 import { taskService } from '@/api/task';
-import { TaskButton } from '@/components/buttons/TaskButton';
+import { TaskButton } from '@/components/common/buttons/TaskButton';
 import { Task, TaskStatus } from '@/types/task.types';
 
 export function NavbarTasks() {
